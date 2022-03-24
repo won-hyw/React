@@ -4,3 +4,4 @@
 // import './component-basic/props-children'
 // import './component-basic/sol_slot_machine'
 import './component-intermediate/state-study-1'
+// import './component-intermediate/sol_user_profile'
