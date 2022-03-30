@@ -10,9 +10,8 @@ function Counter(props) {
     return ( 
         <div>
             <h1>{count}</h1>
-            {/* setCount()를 호출하면은 Counter라고 하는 컴포넌트를 다시 호출하게 된다. 
-                다시 그려진다 => re-render */}
-            <button onClick={() => setCount(count + 1)}>증가</button>
+            {/* setCount()를 호출하면은 Counter라고 하는 컴포넌트를 다시 그리게 된다(re-render) */}
+            <button onClick={() => setCount(count + 1)} style={{marginRight:"10px"}}>증가</button>
             <button onClick={() => setCount(count - 1)}>감소</button>
         </div>
     )
@@ -42,7 +41,7 @@ const StateDemoComponent = function(props) {
             <button onClick={() => {
                 if(state.value1 === "hello") {
                     // 기존 객체를 복사하는 과정에서 새롭게 값을 갱신해주는 것을 확인 가능
-                    // state는 불변이고, 새객체를 만들어서 새롭게 값을 갱신해준다.
+                    // state는 불변이고, 새 객체를 만들어서 새롭게 값을 갱신해준다.
                     setState({ ...state, value1: "bye" } )
                 } else {
                     setState({ ...state, value1: "hello" } )
@@ -55,9 +54,22 @@ const StateDemoComponent = function(props) {
         </div>
     )
 }
-    
+
+function CounterComponent(props) {
+    const [ count, setCount ] = useState(0)
+
+    return ( 
+        <div>
+            <h1>{count}</h1>
+            {/* prev는 파라미터 값.
+                가급적이면은 상태를 바꿀 때 이전의 상태에 기반해서 값을 변경하는 것이 좋다. */}
+            <button onClick={() => setCount(prev => prev + 1)} style={{marginRight:"10px"}}>증가</button>
+            <button onClick={() => setCount(function (prev) { return prev - 1 })}>감소</button>
+        </div>
+    )
+}
 
 ReactDOM.render(
-    <StateDemoComponent/>
+    <CounterComponent/>
     , document.getElementById("root")
 );
