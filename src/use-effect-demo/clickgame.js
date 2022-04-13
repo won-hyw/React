@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
 const ClickGame = function(props) {
+    const [clickCount, setClickCount] = useState(0)
     const [timerState, setTimerState] = useState({
         time: props.time,
         timeout: false
     })
-    const [count, setCount] = useState(0)
 
     useEffect(() => {
         console.log('setInterval');
@@ -28,31 +28,37 @@ const ClickGame = function(props) {
         }
     }, [])
 
+    const style = {
+        background : "dodgerblue", 
+        width : "80px", 
+        height : "80px", 
+        border : "0px", 
+        borderRadius : "50%", 
+        color : "white", 
+        fontWeight : "bold", 
+        fontSize : "24px",
+        cursor : "pointer"
+    }
+
+    if (timerState.timeout) {
+        style.background = "gray"
+    }
+
     return (
         <div>
-            {timerState.timeout ? <h2>timeout</h2> : <h2>{timerState.time}</h2>}
-            <h2>클릭횟수 : {count}</h2>
+            {timerState.timeout ? <h2>게임 끝</h2> : <h2>남은 시간 : {timerState.time}</h2>}
+            <h2>클릭 횟수 : {clickCount}</h2>
             {
-                timerState.timeout ? <button style={{outline:"none", border:0, borderRadius:"50%", width:"50px", height:"50px", color:"white", background:"gray", cursor:"not-allowed"}} disabled>클릭</button> 
-                : <button style={{outline:"none", border:0, borderRadius:"50%", width:"50px", height:"50px", cursor:"pointer"}}  onClick={() => setCount(prev => prev + 1)}>클릭</button>
+                timerState.timeout ? null :
+                <button style = {style} onClick={() => { if(!timerState.timeout) { setClickCount(prev => prev + 1) }}}>클릭</button>
             }
+
             
         </div>
     )
 }
 
-
-
-const App = function(props) {
-    return (
-        <div>
-            {
-                <div>
-                    <ClickGame time={10} />
-                </div>
-            }
-        </div>
-    )
-}
-
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(
+    <ClickGame time={5} />
+    , document.getElementById("root")
+);
