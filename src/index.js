@@ -17,4 +17,7 @@
 // import './use-effect-demo/timer-demo'
 // import './use-effect-demo/clickgame'
 // import './use-effect-demo/github-fetch-repos'
-import './use-effect-demo/github-search-fetch-repos'
+// import './use-effect-demo/github-search-fetch-repos'
+// import './component-advanced/ref-demo'
+// import './component-advanced/controlled-component'
+import './component-advanced/reservation-form'
