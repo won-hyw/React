@@ -20,4 +20,7 @@
 // import './use-effect-demo/github-search-fetch-repos'
 // import './component-advanced/ref-demo'
 // import './component-advanced/controlled-component'
-import './component-advanced/reservation-form'
+// import './component-advanced/reservation-form'
+// import './component-advanced/uncontrolled-component'
+// import './use-ref-demo/use-ref-practice-form'
+import './use-ref-demo/use-ref-practice-form-2'

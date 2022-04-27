@@ -10,7 +10,7 @@ const ReservationForm = function(props) {
     })
     
     const handleInputChange = (event) => {
-        const target = event.target;
+        const target = event.target; // 이벤트가 발생한 요소
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
