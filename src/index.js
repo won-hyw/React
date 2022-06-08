@@ -35,4 +35,11 @@
 // import './component-advanced/use-context-using-user-context'
 
 // import './component-advanced/fake-login-demo'
-import './component-advanced/fake-login-button-intergrated'
+// import './component-advanced/fake-login-button-intergrated'
+
+// import './component-styling/using-css'
+// import './component-styling/using-css-module'
+// import './component-styling/using-sass'
+// import './component-styling/using-styled-components.js'
+// import './component-styling/using-svg'
+import './component-styling/using-react-icons'
