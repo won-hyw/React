@@ -42,4 +42,8 @@
 // import './component-styling/using-sass'
 // import './component-styling/using-styled-components.js'
 // import './component-styling/using-svg'
-import './component-styling/using-react-icons'
+// import './component-styling/using-react-icons'
+
+// import './use-reducer-demo/use-reducer-counter-1.js'
+// import './use-reducer-demo/use-reducer-counter-condition'
+import './use-reducer-demo/use-reducer-todo-app-1'
